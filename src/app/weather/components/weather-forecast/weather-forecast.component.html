@@ -1,0 +1,49 @@
+<div class="card">
+<p-table [value]="forecasts" dataKey="number" responsiveLayout="scroll" >
+  <ng-template pTemplate="body" let-forecast let-expanded="expanded">
+    <tr [pRowToggler]="forecast">
+        <td>{{ forecast.startTime | date:'h a' }}</td>
+        <td>{{ forecast.temperature | temperature:celsius }}</td>
+        <td><img [src]="forecast.icon"/></td>
+        <td>{{ forecast.shortForecast }}</td>
+        <td><span class="flex align-items-center"> <img src="assets/svg/wind-icon.svg" />   {{ forecast.windDirection }}  {{ forecast.windSpeed }}</span></td>
+        <td>
+          <i class="{{ expanded ? 'pi pi-chevron-up' : 'pi pi-chevron-down' }}"></i>
+        </td>
+    </tr>
+</ng-template>
+
+<ng-template pTemplate="rowexpansion" let-forecast>
+  <tr>
+      <td colspan="6">
+          <div class="grid">
+            <div class="col-12 md:col-6">
+              Start Time: <b>{{ forecast.startTime | date:'medium' }}</b>
+              <p-divider></p-divider>
+            </div>
+            <div class="col-12 md:col-6">
+              End Time: <b>{{ forecast.endTime | date:'medium' }}</b>
+              <p-divider></p-divider>
+            </div>
+            <div class="col-12 md:col-6">
+              Is date time: <b>{{ forecast.isDateTime ? 'Yes' : 'No' }}</b>
+              <p-divider></p-divider>
+            </div>
+            <div class="col-12 md:col-6">
+              Temperature: <b>{{ forecast.temperature | temperature:celsius }}</b>
+              <p-divider></p-divider>
+            </div>
+            <div class="col-12 md:col-6">
+              Wind speed:<b>{{ forecast.windSpeed }}</b>
+              <p-divider></p-divider>
+            </div>
+            <div class="col-12 md:col-6">
+              Wind direction: <b>{{ forecast.windDirection }}</b>
+              <p-divider></p-divider>
+            </div>
+          </div>
+      </td>
+  </tr>
+</ng-template>
+</p-table>
+</div>

@@ -1,27 +1,38 @@
-# WeatherAPICrossnoKayeFront
+![logo](https://static.wixstatic.com/media/ec3ca2_3fcbf6a06c11451d97a059edf9f111e5~mv2.png/v1/fill/w_265,h_36,al_c,usm_0.66_1.00_0.01,enc_auto/color%20logo.png)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+# Weather CrossnoKaye Front
 
-## Development server
+### Author: Moises Salvador Curiel Salgado
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This project is the Front End for the WeatherKrossnokaye API. Intended to retrieve the hourly forecast for a given zip code.
 
-## Code scaffolding
+## Instructions
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To run:
 
-## Build
+```
+npm install
+npm start
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Specifications
 
-## Running unit tests
++ Built with Angular 13
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
++ Use of `PrimeFlex` for layout structure.
 
-## Running end-to-end tests
++ Use of `PrimeNG` for built in styled components and theme.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
++ Shared folders contains global components that can be used in the entire app.
 
-## Further help
++ prime-ng folders contains all the PrimeNG modules and these are exported for global usage.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
++ Weather folder contains all the components, interfaces, pages, pipes and services used in the weather module.
+
++ URL base for the project and URL base for the API are defined in the environments folder.
+
+## Links
+
++ [Swagger definition](https://app.swaggerhub.com/apis-docs/moycur/WeatherCrossnokayeAPI/1.0.0#/forecast/get_forecast__zipCode__hourly)
+
++ [GitHub Repository](https://github.com/moy-cur/WeatherCrossnokayeFront)

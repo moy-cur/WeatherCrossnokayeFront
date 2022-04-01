@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="flex flex-column justify-content-center">
+    <div class="text-layout">
+      <h1>Hourly Forecast</h1>
+      <hr>
+      {{ placeName }}
+      <div class="flex flex-row flex-wrap">
+        <app-social [shareUrl]="shareUrl"></app-social>
+      </div>
+    </div>
+    <div class="flex justify-content-center">
+      <button *ngIf="celsius" pButton
+        class="flex justify-content-center w-2.5rem h-2.5rem p-button-raised p-button-secondary" type="button"
+        (click)="celsius = !celsius"><img class="w-2rem h-2rem" src="assets/svg/celsius.svg" /></button>
+      <button *ngIf="!celsius" pButton
+        class="flex justify-content-center w-2.5rem h-2.5rem p-button-raised p-button-secondary" type="button"
+        (click)="celsius =!celsius"><img class="w-2rem h-2rem" src="assets/svg/farenheit.svg" /></button>
+    </div>
+
+    <div class="flex flex-row">
+
+      <input class="w-full" pInputText type="text" name="zipCode" placeholder="zip code..." [(ngModel)]="zipCode"
+        (keyup.enter)="getForecast()">
+      <button pButton id="send" type="button" (click)="getForecast()">Enviar</button>
+    </div>
+
+    <p-messages></p-messages>
+    <div class="flex justify-content-center">
+      <div *ngIf="showSpinner">
+        <p-progressSpinner></p-progressSpinner>
+      </div>
+    </div>
+    <app-weather-forecast [celsius]="celsius" [forecasts]="hourlyForecast"></app-weather-forecast>
+  </div>
+
+
+</div>
